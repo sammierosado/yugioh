@@ -51,10 +51,10 @@ public class AttackListener extends MouseAdapter{
             gui.getActivePlayer().getFieldPanel().getEmptySpotsOnField().add(monsterCardZoneButton);
         }
         game.getCurrentWinner();
-        if(game.getWinner().getPlayerName() == game.getPlayer().getPlayerName()){
+        if(game.getWinnerOfTheGame().getPlayerName() == game.getPlayer().getPlayerName()){
             JOptionPane.showMessageDialog(null, game.getPlayer().getPlayerName() + " wins the game!");
         }
-        if(game.getWinner().getPlayerName() == game.getOpponent().getPlayerName()){
+        if(game.getWinnerOfTheGame().getPlayerName() == game.getOpponent().getPlayerName()){
             JOptionPane.showMessageDialog(null, game.getOpponent().getPlayerName() + " wins the game!");
         }
         monster = null;

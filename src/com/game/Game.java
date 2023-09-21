@@ -1,15 +1,11 @@
 package com.game;
 
-import javax.swing.*;
-import java.io.*;
-import java.util.ArrayList;
-
 public class Game {
 
     private Player player;
     private Player opponent;
     private Player currentPlayer;
-    private Player winner;
+    private Player winnerOfTheGame;
 
     public Game(){
 
@@ -33,12 +29,12 @@ public class Game {
         opponent.lifepoints = lifepoints;
     }
 
-    public Player getWinner() {
-        return winner;
+    public Player getWinnerOfTheGame() {
+        return winnerOfTheGame;
     }
 
-    public void setWinner(Player winner) {
-        this.winner = winner;
+    public void setWinnerOfTheGame(Player winnerOfTheGame) {
+        this.winnerOfTheGame = winnerOfTheGame;
     }
 
     public Player getCurrentPlayer() {
@@ -51,15 +47,15 @@ public class Game {
 
     public void getCurrentWinner(){
         if(player.getLifepoints() <= 0){
-            setWinner(opponent);
+            setWinnerOfTheGame(opponent);
         }
         if(opponent.getLifepoints() <= 0){
-            setWinner(player);
+            setWinnerOfTheGame(player);
         }
     }
 
     public void switchPlayer(){
-        if(winner == null) {
+        if(winnerOfTheGame == null) {
             if (currentPlayer == player) {
                 currentPlayer = opponent;
             } else {
